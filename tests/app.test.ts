@@ -121,6 +121,7 @@ async function openApp() {
   await view.findByText(/WebGL could not start/, undefined, { timeout: 10_000 });
   await view.findByText('3D viewer unavailable');
   assert.ok(view.container.querySelector('.workspace-footer .status-failed'));
+  assert.match(view.container.querySelector('.platform-note')?.textContent ?? '', /Hosted by DrND's KnowledgeHub.*Original application developed and maintained by Qasim Hussain./);
   return view;
 }
 

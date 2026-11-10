@@ -4,6 +4,7 @@ import { LAB_EXERCISES, LAB_GROUPS } from '../domain/lab-exercises';
 import { EVIDENCE_LABEL, JOURNEY_NOTICE, type JourneyEvidence } from '../domain/scale-journey';
 import { evidenceCounts, ILLUSTRATIVE_THINGS, levelRows, linkOfCitation, matchesSearch, structureRows, workRows, type StructureRow } from '../domain/sources-index';
 import type { Atlas, StructureEvidence } from '../domain/types';
+import { ORIGINAL_DEVELOPER, PLATFORM_HOSTING, PLATFORM_SCOPE, UPSTREAM_REPOSITORY } from '../platform-note';
 
 type SourcesTab = 'brief' | 'structures' | 'works' | 'levels' | 'procedures' | 'licences';
 const TABS: readonly (readonly [SourcesTab, string])[] = [['brief', 'In brief'], ['structures', 'Structures'], ['works', 'Works cited'], ['levels', 'Deep levels'], ['procedures', 'Procedures'], ['licences', 'Licences']];
@@ -133,6 +134,7 @@ export function SourcesPage({ atlas, summary, focus }: { readonly atlas: Atlas; 
 
     {tab === 'brief' && <div role="tabpanel" aria-label="In brief">
       <p>MouseBio_3D is a digital laboratory mouse maintained by Qasim Hussain. Each reference keeps its own source identifiers and coordinate frame, and switching references does not register their anatomies. The reference now open is <strong>{atlas.title}</strong>, with {rows.length} structures.</p>
+      <p className="platform-statement">{PLATFORM_HOSTING}. {ORIGINAL_DEVELOPER} {PLATFORM_SCOPE} <a href={UPSTREAM_REPOSITORY} target="_blank" rel="noreferrer">Upstream repository</a>.</p>
       <EvidenceShare rows={rows} />
       <h3>Declared specimen</h3>
       <p>{summary.specimen.description}</p>

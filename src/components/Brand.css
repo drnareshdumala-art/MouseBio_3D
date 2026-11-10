@@ -10,3 +10,6 @@
 @media (max-width:1150px){.brand strong,.workbench .brand strong{font-size:21px}.brand-suffix,.workbench .brand-suffix{font-size:12.5px}}
 .camera-pad button svg{display:block}
 .workbench.mode-dissection .camera-pad button[aria-label="Reset camera"]{display:none}
+/* Hosting and attribution line of the DrND's KnowledgeHub deployment, below the workspace footer. */
+.platform-note{margin:3px 0 0;padding:0 1px;font-size:9px;line-height:1.4;color:#6b7876;flex-shrink:0}
+.platform-statement{padding:8px 10px;border-left:3px solid #2a6a59;background:rgba(42,106,89,.06)}

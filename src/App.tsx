@@ -67,6 +67,7 @@ import { coverageRequests, resolveCoverageTarget, type AnatomyCoverageTopicId, t
 import { smoothingOptionsFor, type SurfaceDisplay } from './domain/display-smoothing';
 import { displayColour, type ColourScheme } from './domain/tissue-palette';
 import { deployedPath, SITE_BASE } from './domain/deployed-path';
+import { ORIGINAL_DEVELOPER, PLATFORM_HOSTING } from './platform-note';
 
 const referenceCatalog = buildReferenceCatalog([...constructedCatalogData, ...referenceCatalogData]);
 const DEFAULT_REFERENCE_ID = 'mousebio-living-v1';
@@ -740,6 +741,7 @@ export default function App() {
         {mode === 'comparative' && <p className="comparison-note">Both panels use the same selected reference geometry. Only imported measurements change. Condition labels do not generate anatomical differences.</p>}
       </div>}
       <footer className="workspace-footer"><span><span className={`status-dot ${viewerFailed ? 'status-failed' : ''}`} /> {viewerFailed ? '3D viewer unavailable' : diagnostics ? diagnostics.traces ? sourcePolyline ? `${diagnostics.traces} line reference · ${diagnostics.samples.toLocaleString()} source points · ${diagnostics.segments.toLocaleString()} polyline segments` : `${diagnostics.traces} trace · ${diagnostics.samples.toLocaleString()} samples · ${diagnostics.segments.toLocaleString()} parent links` : `${diagnostics.meshes} meshes loaded · ${diagnostics.triangles.toLocaleString()} triangles` : 'Loading anatomy'}</span><span>{evidenceShown?'Constructed model':'Source-derived geometry'}</span></footer>
+      <p className="platform-note">{PLATFORM_HOSTING}. {ORIGINAL_DEVELOPER}</p>
     </main>
 
     <aside className="inspector panel" id="structure-inspector" ref={inspector} tabIndex={-1} hidden={!inspectorOpen} aria-label="Structure details">

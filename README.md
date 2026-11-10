@@ -40,3 +40,9 @@ The living mouse is a constructed model of one male specimen in a simulated stan
 ## Licences
 
 The source code is MIT and the documentation CC BY 4.0. Models and metadata derived from Digimouse remain CC BY-SA 4.0, and the other datasets keep their own open licences (CC BY 4.0, CC BY 3.0, CC0 and Apache-2.0). [LICENSES.md](LICENSES.md) and the notices beside each dataset give the attribution.
+
+## Independent deployment by DrND's KnowledgeHub
+
+MouseBio_3D – Hosted by DrND's KnowledgeHub – Virtual Biology Lab.
+
+This repository is an independent fork of [MouseBio_3D](https://github.com/Qasim-Hussain-Code/MouseBio_3D). **Original application developed and maintained by Qasim Hussain.** The application, its source code and its anatomical models remain under the licences in [LICENSE](LICENSE) and [LICENSES.md](LICENSES.md), and the source datasets keep their own authors and licences. DrND's KnowledgeHub hosts this deployment and provides additional educational resources; it did not develop the application. The tool is an educational simulation, not a clinically or experimentally validated animal model, and it does not replace supervised animal training or approved animal protocols. Deployment, upstream tracking and test notes are in `docs/DRND_*.md`.
