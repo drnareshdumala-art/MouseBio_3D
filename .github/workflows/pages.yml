@@ -1,3 +1,6 @@
+# DrND fork: this upstream deployment workflow is disabled outside the upstream repository by the repository guard on
+# each job below. The fork is deployed by Cloudflare Pages (see docs/DRND_PRODUCTION_PLAN.md); testing and validation
+# run in drnd-validate.yml. Keep this file otherwise unchanged so that upstream merges stay simple.
 # Builds the host version of the application under /MouseBio_3D/ (registered models stored gzip-compressed and checked
 # against their registry) and publishes it to GitHub Pages. Actions are pinned to the commits of their releases.
 name: Pages
@@ -18,6 +21,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository == 'Qasim-Hussain-Code/MouseBio_3D'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -36,6 +40,7 @@ jobs:
           path: dist
 
   deploy:
+    if: github.repository == 'Qasim-Hussain-Code/MouseBio_3D'
     needs: build
     runs-on: ubuntu-latest
     environment:
