@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "include": [
+    "/atlas-living/living-mouse.glb",
+    "/atlas-vascular/schmid2021-mvn1-lines.json",
+    "/atlas-volume/sections/cryosection-slices.bin"
+  ],
+  "exclude": []
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "mousebio.r2-assets.v1",
+  "bucket": "drnd-mousebio-3d-assets",
+  "assets": {
+    "/atlas-living/living-mouse.glb": {
+      "key": "dfdc3fd58f30aa1971fdc5410500f453699dac18fa8888bbc21a6972062bfbd0/living-mouse.glb",
+      "contentType": "model/gltf-binary",
+      "storedBytes": 34267945,
+      "storedSha256": "dfdc3fd58f30aa1971fdc5410500f453699dac18fa8888bbc21a6972062bfbd0",
+      "registryBytes": 50891580,
+      "registrySha256": "28f094fee00e7bb3cb4a2e9ebaa2b972555cf60ee750efe24897f3c5052a3966"
+    },
+    "/atlas-vascular/schmid2021-mvn1-lines.json": {
+      "key": "8d9fb19e943a126562ab5a439d83590b5694d58b208f064a8140d556ed3e4652/schmid2021-mvn1-lines.json",
+      "contentType": "application/json",
+      "storedBytes": 38356364,
+      "storedSha256": "8d9fb19e943a126562ab5a439d83590b5694d58b208f064a8140d556ed3e4652",
+      "registryBytes": 38356364,
+      "registrySha256": "8d9fb19e943a126562ab5a439d83590b5694d58b208f064a8140d556ed3e4652"
+    },
+    "/atlas-volume/sections/cryosection-slices.bin": {
+      "key": "4b095a416dad1e12063c227a07df0914f317331ae732c2bd8874a4bc045843e0/cryosection-slices.bin",
+      "contentType": "application/octet-stream",
+      "storedBytes": 35654474,
+      "storedSha256": "4b095a416dad1e12063c227a07df0914f317331ae732c2bd8874a4bc045843e0",
+      "registryBytes": 35654474,
+      "registrySha256": "4b095a416dad1e12063c227a07df0914f317331ae732c2bd8874a4bc045843e0"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Same hardening as render.yaml. Not applied to Function responses; functions/_middleware.js sets its own headers.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
