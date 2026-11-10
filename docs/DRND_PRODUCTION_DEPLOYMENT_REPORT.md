@@ -69,6 +69,25 @@ Then `r2_assets.ts check --files` was run on the downloaded copies, which unpack
 - The upload used the same bytes the trial used (the build is deterministic), so the production keys equal the keys in the table committed at `523e5bb`. No repository file changed during this gate.
 - Rollback for this gate: delete the three objects, then the bucket (`wrangler r2 object delete ...`, `wrangler r2 bucket delete drnd-mousebio-3d-assets`). Not done.
 
+## Gate D: Git-connected Pages project `drnd-mousebio-3d` (approved 2026-11-10) - waiting for the dashboard steps
+
+The Git connection and the Cloudflare GitHub app authorisation can only be done in the Cloudflare dashboard, by you. Prerequisites checked on 2026-11-10: the project name `drnd-mousebio-3d` is free; the fork is public with Pages off; branches `main` and `drnd/production` exist on the fork; bucket statistics still read 0 (not yet refreshed).
+
+**Order refinement (a deliberate change from plan section 4, step 6).** A Git-connected project builds its production branch the moment it is created, and an R2 binding can only be added afterwards. To avoid a live deployment whose three large routes return 503, the project is first created with production branch **`main`**. That first build is expected to **fail** (`main` does not contain `deploy/cloudflare-pages/prepare_dist.sh`), so nothing is published. The binding, variables and branch rules are then set; a `drnd/*` preview is verified; only then is the production branch switched to `drnd/production`.
+
+Checklist for the dashboard (Workers and Pages, Create, Pages, Connect to Git):
+
+1. Authorise the Cloudflare GitHub app for **only** the repository `drnareshdumala-art/MouseBio_3D` (choose "Only select repositories"). Read the permissions on the consent screen.
+2. Project name `drnd-mousebio-3d`; production branch **`main`** (temporary).
+3. Framework preset: None. Build command: `npm run build:host && deploy/cloudflare-pages/prepare_dist.sh dist /tmp/r2-stash`. Build output directory: `dist`. Root directory: leave empty.
+4. Environment variable `NODE_VERSION` = `22.23.4` (plain text, production and preview).
+5. Save and Deploy. The first build should fail at the missing script; expect no deployment.
+6. Project Settings, Bindings: add an R2 bucket binding, variable name `R2_ASSETS`, bucket `drnd-mousebio-3d-assets`, for **both Production and Preview**.
+7. Project Settings, Branch control: preview branches = custom, include `drnd/*`. Leave the production branch as `main` for now.
+8. Confirm Web Analytics is off and no custom domain is attached.
+
+After you tell me it is done, I verify read-only with `wrangler pages project list` and `wrangler pages deployment list`. Next steps, each needing approval: push a `drnd/staging` branch to create a preview deployment and verify it (`verify_assets.py` and the browser checks); then switch the production branch to `drnd/production` (dashboard) and push the one pending local commit to trigger the production build; then the rollback rehearsal.
+
 ## Next gate
 
-Gate D (plan section 4, step 6): create the Git-connected Pages project `drnd-mousebio-3d` in the Cloudflare dashboard, bind this bucket as `R2_ASSETS` for production and preview, set `NODE_VERSION=22.23.4`, branch control for `drnd/*`. Requires your explicit approval and your dashboard and GitHub authorisation. Not started.
+Gate E: preview verification, then production deployment (see Gate D above).
