@@ -1,0 +1,83 @@
+MouseBio_3D R2 trial: deployment verification evidence
+Captured: 2026-11-10T12:17:24Z (read-only GET/HEAD requests only)
+Source commit: 6cfa354645ab48ecfd1f816769448dce575f8282 (main, identical to upstream/main at capture)
+Site: https://drnd-mousebio-3d-trial.pages.dev  | deployment 6c99ff02-ffab-4811-8d17-41bcf7070ba1 | R2 bucket drnd-mousebio-3d-assets-trial
+
+## SHA-256 of the objects uploaded to R2 (stored bytes)
+dfdc3fd58f30aa1971fdc5410500f453699dac18fa8888bbc21a6972062bfbd0  atlas-living/living-mouse.glb
+8d9fb19e943a126562ab5a439d83590b5694d58b208f064a8140d556ed3e4652  atlas-vascular/schmid2021-mvn1-lines.json
+4b095a416dad1e12063c227a07df0914f317331ae732c2bd8874a4bc045843e0  atlas-volume/sections/cryosection-slices.bin
+34267945 bytes atlas-living/living-mouse.glb
+38356364 bytes atlas-vascular/schmid2021-mvn1-lines.json
+35654474 bytes atlas-volume/sections/cryosection-slices.bin
+
+## verify_assets.py (registry size + SHA-256)
+OK   /atlas-living/living-mouse.glb accept=identity encoding=None wire=34267945 type=model/gltf-binary cache=public, max-age=31536000, immutable
+OK   /atlas-living/living-mouse.glb accept=gzip encoding=None wire=34267945 type=model/gltf-binary cache=public, max-age=31536000, immutable
+OK   /atlas-vascular/schmid2021-mvn1-lines.json accept=identity encoding=None wire=38356364 type=application/json cache=public, max-age=31536000, immutable
+OK   /atlas-vascular/schmid2021-mvn1-lines.json accept=gzip encoding=gzip wire=3850065 type=application/json cache=public, max-age=31536000, immutable
+OK   /atlas-volume/sections/cryosection-slices.bin accept=identity encoding=None wire=35654474 type=application/octet-stream cache=public, max-age=31536000, immutable
+OK   /atlas-volume/sections/cryosection-slices.bin accept=gzip encoding=None wire=35654474 type=application/octet-stream cache=public, max-age=31536000, immutable
+exit=0
+
+## HEAD /atlas-living/living-mouse.glb (Accept-Encoding: gzip)
+HTTP/2 200 
+date: Tue, 10 Nov 2026 12:18:10 GMT
+alt-svc: h3=":443"; ma=86400
+content-type: model/gltf-binary
+server: cloudflare
+cache-control: public, max-age=31536000, immutable
+etag: "bb96493de8e1e2bd17ae57104322a3fe"
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=QULL8eBwbSHHVZOMTiQTkWxpOcyIzY94aC%2BC%2BLKbdSx0vokar2kph4z1S6NsER86EnCMWFRN9ZbDGhTx5kYYTIJgsCBphdtXNBIVe6%2Fjxy0M5srokM0ZX%2F49OpKi0j%2Fa3Bxbbkgn%2Fp3BqQqAcD9SGjXXug%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a584ff8d0852379f-BOM
+content-length: 34267945
+
+
+## HEAD /atlas-vascular/schmid2021-mvn1-lines.json (Accept-Encoding: gzip)
+HTTP/2 200 
+date: Tue, 10 Nov 2026 12:18:10 GMT
+etag: W/"60470ab9c9977932b1d7ed7264d1d27d"
+content-type: application/json
+server: cloudflare
+cache-control: public, max-age=31536000, immutable
+content-encoding: gzip
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qZ2ZUbfZUYfC8eS8Vbw6Lhl6JIAkJrrHDjNVLmA2icb%2BfGdZUYNHSip4KXXY764L6soW%2BwPGhv%2Bb%2FVm9KLwX9WKJQaQvItHwqFkTY812reJdNt%2BOxtUeutTVdXwhNW5UzB4Ko2EtvMJrdrO8rB%2F5YRxJaQ%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a584ff8fcbe86de3-BOM
+alt-svc: h3=":443"; ma=86400
+
+
+## HEAD /atlas-volume/sections/cryosection-slices.bin (Accept-Encoding: gzip)
+HTTP/2 200 
+date: Tue, 10 Nov 2026 12:18:11 GMT
+alt-svc: h3=":443"; ma=86400
+content-type: application/octet-stream
+server: cloudflare
+cache-control: public, max-age=31536000, immutable
+etag: "086e2e3947d6f897d7c71a399b1091e3"
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ZzXyRrDRY5oqEJV4HX9NIijMQjBo8DaLpNsMLgc%2BqwBtJNpwAO5ikuHHa5T%2FHuBOH1Lm2f5Klh1pOQ3OYYF7jl3bgrkodF%2FD%2FlLThY7StMBlqsZLIveBEtVIhdGphvnSf461UbqniBo6wSm8E0McVHs6Nw%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a584ff918aef892d-BOM
+content-length: 35654474
+
+
+## HEAD /
+HTTP/2 200 
+date: Tue, 10 Nov 2026 12:18:11 GMT
+content-type: text/html; charset=utf-8
+server: cloudflare
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=H3HL%2BqeDxBjD%2FMu%2B5R7bM3jOVjEiD926qOvLC4cRYURidsP3NdQoGmWxHS%2B3EI4bpXLO8EIKl3zu8zZI1bSeXEVy02BiR%2Bea4S38EY0FR2cuxBk4kdiRYouOqotSOZ0gdsBy3B4R5fG2kJOO9Fz81UBaGA%3D%3D"}]}
+cf-ray: a584ff942e693d3c-BOM
+alt-svc: h3=":443"; ma=86400
+
+
+## Browser results recorded in docs/DRND_R2_TRIAL_REPORT.md section 7
